@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: comment
+spec:
+  template:
+    spec:
+      containers:
+      - name: comment
+        image: {{ .Values.image }}
+      restartPolicy: Never
+  backoffLimit: 4
